@@ -4,6 +4,7 @@ import Mercadinho from "../Pages/Mercadinho";
 import Carrinho from "../Pages/Carrinho";
 import Cadastro from "../Pages/Cadastro";
 
+
 export default function Router() {
     const [carrinho, setCarrinho] = useState([])
 
@@ -21,7 +22,7 @@ export default function Router() {
                 />
                 <Route
                     path="/cadastro"
-                    element={<Cadastro carrinho={carrinho} setCarrinho={setCarrinho}/>}
+                    element={<Cadastro />}
                 />
 
             </Routes>

@@ -44,7 +44,7 @@ function Mercadinho({carrinho, setCarrinho}) {
             key={fruta.id}
             image={fruta.url}
             name={fruta.name}
-            price={fruta.id}
+            price={fruta.price}
             id={fruta.id}
             comprar={comprar}
         />
