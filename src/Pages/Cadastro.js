@@ -1,21 +1,33 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import { handleHome } from "../Router/cordinator";
 import styled from "styled-components";
+import frutaria from "../frutaria.json"
 
-export default function Cadastro (props){
-  const[formulario, setFormulario]=useState({name:"", url:"", price:""})
+export default function Cadastro (){
+
+  const[formulario, setFormulario]=useState({ id: Date.now(), url:"", name:"", price:"" });
+
   const navigate = useNavigate();
+
+  console.log("Lista de frutas ", frutaria.frutaria)
+
 
   const onChangeInputs=(event)=>{
     const {name, value}= event.target
     setFormulario({...formulario, [name]:value})
-  }
+  };
+
   const handleClick = (event)=>{
-    event.preventDefault()
-    console.log(formulario);
-  }
+    event.preventDefault();
+    console.log(`formulario`, formulario);
+    const novaFruta = frutaria.frutaria.push(formulario);
+    console.log(frutaria.frutaria);
+
+    return novaFruta
+  };
  
+  console.log("Lista de frutas 2", frutaria.frutaria)
  
   return(
     <CadastroContainer>
@@ -47,7 +59,9 @@ export default function Cadastro (props){
     </FormContainer>
     </CadastroContainer>
   )
-}
+};
+
+
 const CadastroContainer = styled.main`
   display: flex;
   flex-direction: column;
