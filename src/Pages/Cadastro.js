@@ -20,8 +20,11 @@ export default function Cadastro (){
 
   const handleClick = (event)=>{
     event.preventDefault();
+
     console.log(`formulario`, formulario);
+
     const novaFruta = frutaria.frutaria.push(formulario);
+
     console.log(frutaria.frutaria);
 
     return novaFruta
